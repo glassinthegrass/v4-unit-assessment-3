@@ -15,6 +15,15 @@
 */
 
 //CODE HERE
+class Character {
+  constructor(name,type) {
+    this.name = name;
+    this.type = type;
+  }
+  getInfo(name,type) {
+    return `This is a ${this.type} character named ${this.name}.`;
+  }
+}
 
 //////////////////PROBLEM 2////////////////////
 
@@ -34,13 +43,25 @@
 
 //CODE HERE
 
+class NPC extends Character {
+  constructor(name, type, location, phrase) {
+    super(name, type);
+    this.location = location;
+    this.phrase = phrase;
+  }
+
+  dialogue(name,phrase) {
+    return `${this.name}: ${this.phrase}`
+  }
+}
+
 /*
     Create an NPC named Ralph who is a human located in Niceland. His phrase should be `I'm gonna wreck it!`. 
     Store your new NPC in a variable called 'ralph'.
 */
 
 //CODE HERE
-
+const ralph = new NPC("Ralph", "human", "Niceland", "I'm gonna wreck it!");
 /*
     Next you're going to create three variables to store information about Ralph.
     First, make a variable named ralphsInfo whose value will be the invocation of Ralph's getInfo method.
@@ -49,7 +70,9 @@
 */
 
 //CODE HERE
-
+const ralphsInfo = getInfo(ralph.name, ralph.type);
+const ralphsDialogue = dialogue(ralph.name, ralph.phrase);
+const ralphsLocation = ralph.location;
 //////////////////PROBLEM 3////////////////////
 
 /*
@@ -74,7 +97,16 @@
 */
 
 //CODE HERE
+// class Player extends Character {
+// constructor(name,type,healthLevel,attackLevel) {
+//   super(name, type)
+//   this.healthLevel: healthLevel;
+//   this.attackLevel: attackLevel;
+// }
+//   defend(amount) {
 
+//   }
+// }
 /*
     Next, we'll create two Players.
     Store the first in a variable called aang, his name should be 'Aang' 
